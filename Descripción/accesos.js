@@ -53,7 +53,7 @@ if (loginForm) {
             // Buscamos el audio en el index.html
             const musica = document.getElementById('musica-fondo');
             if (musica) {
-                musica.play().catch(err => console.log("Audio bloqueado:", err));
+                musica.play().catch(err => console.log("Bloqueado por el navegador:", err));
             }
 
             localStorage.setItem("musicaEstado", "play");
