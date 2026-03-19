@@ -9,6 +9,11 @@
 </head>
 <body>
 
+    <!-- REPRODUCTOR DE AUDIO (Oculto) -->
+    <audio id="musica-fondo" loop>
+        <source src="audio/musica.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="login-container">
         <form class="login-form" id="loginForm">
             <div class="flower-icon">🌻</div>
@@ -19,7 +24,8 @@
             <input type="password" id="passInput" placeholder="Contraseña" required>
             
             <button type="submit">Entrar</button>
-            <script src="esperar/espera.html"></script>
+            
+            <!-- ELIMINAMOS EL SCRIPT QUE APUNTABA AL HTML -->
             
             <a href="#" id="forgotLink"></a>
         </form>
@@ -32,8 +38,8 @@
                 <span class="flower-part">🌻</span>
                 <span class="crack-icon">💔</span>
             </div>
-            <h3>¡Tus credenciales no florecieron correctamente.!</h3>
-            <p id="errorText">Tus credenciales no florecieron correctamente.</p>
+            <h3>¡Tus credenciales no florecieron correctamente!</h3>
+            <p id="errorText">Por favor, verifica tu usuario y contraseña.</p>
             <button class="btn-close" id="closeBtn">Intentar de nuevo</button>
         </div>
     </div>

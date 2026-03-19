@@ -38,35 +38,39 @@ if (loginForm) {
     loginForm.onsubmit = function(e) {
         e.preventDefault();
         
-        // .trim() elimina espacios en blanco al inicio o final que se van por error
         const u = document.getElementById('userInput').value.trim();
         const p = document.getElementById('passInput').value.trim();
 
-        // Buscamos si el nombre existe sin importar mayúsculas/minúsculas
         const usuarioValido = Object.keys(usuariosAutorizados).find(
             key => key.toLowerCase() === u.toLowerCase()
         );
 
-        // Verificamos si encontramos al usuario y si su contraseña coincide EXACTAMENTE
         if (usuarioValido && usuariosAutorizados[usuarioValido] === p) {
             
-            // Guardamos el nombre original (con la primera mayúscula) para el ramo
             localStorage.setItem("usuarioLogueado", usuarioValido); 
 
-            // CONFIGURACIÓN DE MÚSICA PARA QUE NO SE CORTE
+            // --- NUEVA LÓGICA DE AUDIO ---
+            // Buscamos el audio en el index.html
+            const musica = document.getElementById('musica-fondo');
+            if (musica) {
+                musica.play().catch(err => console.log("Audio bloqueado:", err));
+            }
+
             localStorage.setItem("musicaEstado", "play");
             localStorage.setItem("musicaTiempo", "0");
             
-            // Redirigir a la página de espera
-            window.location.href = "esperar/espera.html";
+            // Damos un pequeño margen de 300ms para que el audio arranque antes de cambiar de página
+            setTimeout(() => {
+                window.location.href = "esperar/espera.html";
+            }, 300);
+
         } else {
-            // SI LOS DATOS SON INCORRECTOS O NO EXISTEN
             mostrarErrorFlor();
         }
     };
 }
 
-// MOSTRAR ERROR AL OLVIDAR ACCESOS
+// RESTO DEL CÓDIGO (Olvidar accesos y Cerrar Error)
 if (forgotLink) {
     forgotLink.onclick = function(e) {
         e.preventDefault();
@@ -74,7 +78,6 @@ if (forgotLink) {
     };
 }
 
-// CERRAR EL ERROR
 if (closeBtn) {
     closeBtn.onclick = function() {
         modal.style.display = "none";
