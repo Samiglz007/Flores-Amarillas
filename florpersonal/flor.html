@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flores Amarillas</title>
+    <!-- 1. Corregido el icono -->
+    <link rel="icon" href="../imagen/imagen.jpg" type="image/jpeg">
+    <!-- 2. Corregido el enlace al CSS (estaba duplicado abajo como script) -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="night"></div>
+
+    <!-- 3. Etiqueta correcta para el audio -->
+    <audio id="musica-fondo" loop>
+        <source src="../audio/musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="flowers-container" id="flower-garden">
+        <div class="branch-back branch-back--1"></div>
+        <div class="branch-back branch-back--2"></div>
+        <div class="branch-back branch-back--3"></div>
+
+        <div class="moño">
+            <div class="moño__nudo"></div>
+            <div class="moño__lazo moño__lazo--izq"></div>
+            <div class="moño__lazo moño__lazo--der"></div>
+            <div class="moño__tira moño__tira--izq"></div>
+            <div class="moño__tira moño__tira--der"></div>
+        </div>
+    </div>
+
+    <div class="texto-container" id="contenedor-texto"></div>
+
+    <!-- 4. El JavaScript debe ser el encargado de sincronizar el tiempo -->
+    <script src="main.js"></script>
+</body>
+</html>

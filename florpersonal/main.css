@@ -1,0 +1,164 @@
+@import url('https://googleapis.com');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* --- FONDO OSCURO CON PROFUNDIDAD --- */
+body {
+    background: radial-gradient(circle at center, #001a1d 0%, #000 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- CIELO ESTRELLADO (PUNTOS BLANCOS) --- */
+.night {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 160px 120px, #fff, rgba(0,0,0,0));
+    background-size: 200px 200px;
+    opacity: 0.4;
+    z-index: -1;
+    animation: estrellasParpadeo 4s infinite alternate;
+}
+
+@keyframes estrellasParpadeo {
+    from { opacity: 0.3; }
+    to { opacity: 0.6; }
+}
+
+/* --- CONTENEDOR DEL RAMO --- */
+.flowers-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.flower {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: bottom center;
+    animation: sway 4s ease-in-out infinite alternate;
+}
+
+.flower__line {
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, #0a9396);
+}
+
+.flower__leafs {
+    position: absolute;
+    top: -30px;
+    filter: drop-shadow(0 0 10px #ffeb3b);
+}
+
+.flower__leaf {
+    position: absolute;
+    width: 28px; height: 40px;
+    background: #ffeb3b;
+    border-radius: 50% 50% 15% 15%;
+    transform-origin: bottom center;
+}
+
+.flower__leaf:nth-child(1) { transform: translateX(-50%) rotate(0deg); }
+.flower__leaf:nth-child(2) { transform: translateX(-50%) rotate(70deg); }
+.flower__leaf:nth-child(3) { transform: translateX(-50%) rotate(-70deg); }
+.flower__leaf:nth-child(4) { transform: translateX(-50%) rotate(180deg); opacity: 0.3; }
+
+.flower__white-circle {
+    position: absolute;
+    width: 14px; height: 10px;
+    background: white;
+    top: 25px; left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+/* --- MOÑO (LISTÓN) --- */
+.moño { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 500; }
+.moño__nudo { width: 22px; height: 18px; background: #00bcd4; border-radius: 4px; position: relative; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+.moño__lazo { position: absolute; width: 40px; height: 30px; background-color: #0097a7; border-radius: 50% 50% 10% 50%; top: -5px; }
+.moño__lazo--izq { left: -32px; transform: rotate(-10deg); }
+.moño__lazo--der { right: -32px; transform: rotate(10deg) scaleX(-1); }
+.moño__tira { position: absolute; top: 10px; width: 12px; height: 50px; background: linear-gradient(to bottom, #0097a7, transparent); clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%); }
+.moño__tira--izq { left: -4px; transform: rotate(15deg); }
+.moño__tira--der { right: -4px; transform: rotate(-15deg); }
+
+/* --- RAMAS DE FONDO --- */
+.branch-back {
+    position: absolute;
+    bottom: 40px; left: 50%;
+    width: 2px; height: 260px;
+    background: linear-gradient(to top, transparent, #054d4d);
+    opacity: 0.4;
+    transform-origin: bottom center;
+}
+.branch-back--1 { transform: rotate(-25deg); }
+.branch-back--2 { transform: rotate(25deg); }
+.branch-back--3 { transform: rotate(0deg); height: 300px; }
+
+/* --- TEXTO Y PERSONALIZACIÓN --- */
+.texto-container {
+    margin-top: 30px;
+    text-align: center;
+    z-index: 100;
+    width: 90%;
+    max-width: 800px; 
+    padding: 0 20px;
+}
+
+#nombre-dinamico {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.Título {
+    color: #f7e63b; /* Color amarillo flores */
+    font-size: 1.1rem;
+    line-height: 1.7; 
+    margin-bottom: 15px;
+    font-weight: 300;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.sub {
+    font-size: 0.85rem;
+    color: #f7e63b; /* CAMBIO: Ahora es amarillo brillante */
+    opacity: 1;
+    margin-top: 25px;
+    font-style: italic;
+    display: block;
+    text-shadow: 0 0 10px rgba(247, 230, 59, 0.5); /* Brillo amarillo */
+    border-top: 1px solid rgba(247, 230, 59, 0.2);
+    padding-top: 15px;
+}
+
+@keyframes sway {
+    from { margin-left: -2px; }
+    to { margin-left: 2px; }
+}

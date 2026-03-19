@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    background: #fffde7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.loader-container { 
+    text-align: center; 
+    width: 90%; 
+    max-width: 500px; 
+}
+
+.sunflower-main {
+    font-size: 90px;
+    animation: spin 5s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+h2 { color: #fbc02d; font-weight: 300; margin-bottom: 20px; }
+
+.stem-container {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 20px;
+    margin-bottom: 50px; /* Aumentado para dar espacio a los girasoles */
+    position: relative; 
+    border: 2px solid #fff;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    /* IMPORTANTE: Sin overflow: hidden */
+}
+
+.growth-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #8bc34a);
+    border-radius: 20px;
+    /* 180 segundos (10 frases x 18s) */
+    animation: fill-progress 180s linear forwards;
+}
+
+@keyframes fill-progress {
+    to { width: 100%; }
+}
+
+/* ESTILO PARA LOS GIRASOLES QUE APARECEN */
+.mini-girasol {
+    position: absolute;
+    top: -35px; /* Ajustado para que floten sobre la barra */
+    font-size: 24px;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: aparecerGirasol 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes aparecerGirasol {
+    0% { transform: translateX(-50%) scale(0) rotate(-45deg); opacity: 0; }
+    100% { transform: translateX(-50%) scale(1) rotate(0); opacity: 1; }
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(251, 192, 45, 0.2);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fbc02d;
+    position: relative;
+}
+
+#info-text {
+    color: #5d4037;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    transition: opacity 0.8s ease;
+}

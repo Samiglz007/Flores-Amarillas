@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Flores Amarillas</title>
+    <link rel="icon" href="../imagen/imagen.jpg" type="imagen/png">
+    <link rel="stylesheet" href="primera.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <div class="flower-icon">🌻</div>
+            <h2>¡Bienvenida!</h2>
+            <p>Que tu día brille como estas flores</p>
+            
+            <input type="text" id="userInput" placeholder="Usuario" required>
+            <input type="password" id="passInput" placeholder="Contraseña" required>
+            
+            <button type="submit">Entrar</button>
+            <script src="../esperar/espera.html"></script>
+            
+            <a href="#" id="forgotLink"></a>
+        </form>
+    </div>
+
+    <!-- MODAL DE ERROR -->
+    <div id="errorModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="broken-flower-box">
+                <span class="flower-part">🌻</span>
+                <span class="crack-icon">💔</span>
+            </div>
+            <h3>¡Tus credenciales no florecieron correctamente.!</h3>
+            <p id="errorText">Tus credenciales no florecieron correctamente.</p>
+            <button class="btn-close" id="closeBtn">Intentar de nuevo</button>
+        </div>
+    </div>
+
+    <!-- AQUÍ SE CONECTA EL ARCHIVO DE ACCESOS -->
+    <script src="accesos.js"></script>
+</body>
+</html>
