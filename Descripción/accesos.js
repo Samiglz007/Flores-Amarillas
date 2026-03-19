@@ -58,7 +58,7 @@ if (loginForm) {
             localStorage.setItem("musicaTiempo", "0");
             
             // Redirigir a la página de espera
-            window.location.href = "../esperar/espera.html";
+            window.location.href = "esperar/espera.html";
         } else {
             // SI LOS DATOS SON INCORRECTOS O NO EXISTEN
             mostrarErrorFlor();
