@@ -7,7 +7,7 @@ const contenido = [
     "💛 El color amarillo simboliza la luz del sol, la energía positiva y el optimismo por un futuro brillante juntos.💛",
     "🌻 ¿Sabías que el girasol siempre busca la luz? Es un símbolo de lealtad y de mirar siempre el lado positivo.🌻",
     "☀️ Dar flores amarillas este día es un gesto de ternura que dice: 'Quiero que brilles en mi vida siempre'.☀️",
-    "💛 No siempre tengo las palabras correctas para decirlo, pero te admiro profundamente. No solo por lo que haces, sino por como lo haces. Por tu forma de avanzar, aun cuándo las cosas no son fáciles. Por tu fuerza silenciosa, tu luz constante, tu manera de ver la vida desde un lugar auténtico. Muchas peronas pasan por el mundo dejandoruido, pero tu dejas huella. Eres inspiración, aunque no lo pretendas. Eres ejemplo, aunque no te des cuenta. Gracias por ser tú, simplemente tú y por enseñarme tanto sin necesidad de decir una sola palabra.💛",
+    "💛 No siempre tengo las palabras correctas para decirlo, pero te admiro profundamente. No solo por lo que haces, sino por como lo haces. Por tu forma de avanzar, aun cuándo las cosas no son fáciles. Por tu fuerza silenciosa, tu luz constante, tu manera de ver la vida desde un lugar auténtico. Muchas peronas pasan por el mundo dejando ruido, pero tu dejas huella. Eres inspiración, aunque no lo pretendas. Eres ejemplo, aunque no te des cuenta. Gracias por ser tú, simplemente tú y por enseñarme tanto sin necesidad de decir una sola palabra.💛",
     "🌼 El 21 de marzo también nos recuerda valorar la amistad verdadera, esa que florece en cualquier estación.🌼",
     "🌻 ¿Qué le dice un pétalo a otro? ¡Qué suerte tenerte cerca en este jardín! 💖",
     "✨ ¡Tu jardín está casi listo! Estamos terminando de regar los últimos sueños para ti..."
