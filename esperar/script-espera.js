@@ -61,6 +61,6 @@ window.onload = function() {
     const tiempoTotal = 180000; // 180 segundos exactos
     
     setTimeout(function() {
-        window.location.href = "../florpersonal/flor.html"; 
+        window.location.href = "florpersonal/flor.html"; 
     }, tiempoTotal + 1000); // Un segundo extra de margen
 };
